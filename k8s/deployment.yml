@@ -17,11 +17,12 @@ spec:
       labels:
         name:  ketopal-api-v1
     spec:
+      restartPolicy: OnFailure
       containers:
       - image:  nebbiaregistry.azurecr.io/ketopal/api:20190711.5
         name:  ketopal-api-v1
         resources:
-          requests:
+          limits:
             cpu: "128m"
             memory: "256Mi"
         livenessProbe:
@@ -42,5 +43,4 @@ spec:
         ports:
         - containerPort:  80
           name:  http
-      restartPolicy: OnFailure
-      imagePullPolicy: IfNotPresent
+        imagePullPolicy: IfNotPresent
