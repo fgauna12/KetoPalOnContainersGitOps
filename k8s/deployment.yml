@@ -17,7 +17,7 @@ spec:
       labels:
         name:  ketopal-api-v1
     spec:
-      restartPolicy: OnFailure
+      restartPolicy: Always
       containers:
       - image:  nebbiaregistry.azurecr.io/ketopal/api:20190711.5
         imagePullPolicy: IfNotPresent
