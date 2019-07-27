@@ -1,0 +1,46 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name:  ketopal-api
+  namespace: ketopal
+  labels:
+    name:  ketopal-api
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name:  ketopal-api-v1
+    spec:
+      containers:
+      - image:  nebbiaregistry.azurecr.io/ketopal/api:20190711.5
+        name:  ketopal-api-v1
+        resources:
+          requests:
+            cpu: "128m"
+            memory: "256Mi"
+        livenessProbe:
+          httpGet:
+            path: /hc
+            port: 80
+          initialDelaySeconds: 90
+          timeoutSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /liveness
+            port: 80
+          initialDelaySeconds: 30
+          timeoutSeconds: 10
+        env:
+        - name:  ASPNETCORE_ENVIRONMENT
+          value:  Production       
+        ports:
+        - containerPort:  80
+          name:  http
+      restartPolicy: OnFailure
+      imagePullPolicy: IfNotPresent
