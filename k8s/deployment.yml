@@ -20,6 +20,7 @@ spec:
       restartPolicy: OnFailure
       containers:
       - image:  nebbiaregistry.azurecr.io/ketopal/api:20190711.5
+        imagePullPolicy: IfNotPresent
         name:  ketopal-api-v1
         resources:
           limits:
@@ -43,4 +44,3 @@ spec:
         ports:
         - containerPort:  80
           name:  http
-        imagePullPolicy: IfNotPresent
