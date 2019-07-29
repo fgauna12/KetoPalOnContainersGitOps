@@ -124,6 +124,9 @@ spec:
         # to those under the following relative paths in the git repository
         - --git-path=k8s
 
+        ## Delete resources that don't exist in source control (experimental)
+        - --sync-garbage-collection=true
+
         # Include these two to enable git commit signing
         # - --git-gpg-key-import=/root/gpg-import
         # - --git-signing-key=<key id>
