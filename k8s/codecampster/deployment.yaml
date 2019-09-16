@@ -17,7 +17,7 @@ spec:
         name:  codecampster
     spec:
       containers:
-      - image:  nginx
+      - image:  nebbiaregistry.azurecr.io/codecampster/mvc
         name:  codecampster
         resources:
           requests:
