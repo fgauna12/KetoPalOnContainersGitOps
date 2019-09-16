@@ -17,7 +17,7 @@ spec:
         name:  codecampster
     spec:
       containers:
-      - image:  nebbiaregistry.azurecr.io/codecampster/mvc:20190916.6
+      - image:  nebbiaregistry.azurecr.io/codecampster/mvc:20190916.7
         imagePullPolicy: IfNotPresent
         name:  codecampster
         resources:
