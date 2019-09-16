@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name:  codecampster-v2
-  namescape: codecampster
+  namespace: codecampster
   labels:
     name:  codecampster
 spec:
