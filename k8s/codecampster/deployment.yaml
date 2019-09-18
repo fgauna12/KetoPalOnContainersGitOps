@@ -4,7 +4,7 @@ metadata:
   name:  codecampster-v2
   namespace: codecampster
   labels:
-    name:  codecampster
+    app:  codecampster
 spec:
   strategy:
     rollingUpdate:
