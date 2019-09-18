@@ -14,7 +14,7 @@ spec:
   template:
     metadata:
       labels:
-        name:  codecampster
+        app:  codecampster
     spec:
       containers:
       - image:  nebbiaregistry.azurecr.io/codecampster/mvc:20190916.7
